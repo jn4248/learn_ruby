@@ -69,4 +69,24 @@ describe "#translate" do
   # * write a test asserting that capitalized words are still capitalized (but with a different initial capital letter, of course)
   # * retain the punctuation from the original phrase
 
+  it "capitalized words remain capitalized, but with the correct (first) letter capitalized, with punctuation being retained" do
+    s = translate("Fish can bite, but not hard.")
+    expect(s).to eq("Ishfay ancay itebay, utbay otnay ardhay.")
+  end
+
+  it "capitalized words remain capitalized, but with the correct (first) letter capitalized, with punctuation being retained" do
+    s = translate("Kiss John for Terry.")
+    expect(s).to eq("Isskay Ohnjay orfay Errytay.")
+  end
+
+  it "ignores words consisiting of a single letter" do
+    s = translate("get a fresh drink")
+    expect(s).to eq("etgay a eshfray inkdray")
+  end
+
+  it "ignores words consisiting of a single letter" do
+    s = translate("I like candy")
+    expect(s).to eq("I ikelay andycay")
+  end
+
 end
